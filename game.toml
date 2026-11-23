@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Need for Speed - Porsche Unleashed"
+id = "SLUS-01104"
+players = 1
+exe = "disc/SLUS_011.04"
+disc = "disc/Need for Speed - Porsche Unleashed (USA).cue"
+discs = ["disc/Need for Speed - Porsche Unleashed (USA).cue"]
+disc_serials = ["SLUS-01104"]
+load_address = "0x8005A800"
+entry_pc = "0x8009F838"
+text_size = "0x0005C000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Need for Speed - Porsche Unleashed (USA) (Track 1).bin"
+cue_name = "Need for Speed - Porsche Unleashed (USA).cue"
+boot_exe = "SLUS_011.04"
+known_sizes = [315850080]
+known_md5 = [
+  "680dc4300ff530712485848bf5e70c99",
+]
+known_sha1 = [
+  "37563b1a92cddaf96d0519a882a15200adc3daec",
+]
+known_crc32 = [
+  "dee48d9b",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Need for Speed - Porsche Unleashed Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 15
+required_disc_fp = "a45f663d5f4c95e6f80915b542ca82ad6f2217e27dca51ff7ffd1176675fa1c6"

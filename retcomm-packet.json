@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "need-for-speed-porsche-unleashed-psx",
+  "name": "Need for Speed - Porsche Unleashed",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "need-for-speed-porsche-unleashed-recomp",
+  "rom_identity": {
+    "crc32": [
+      "dee48d9b"
+    ],
+    "md5": [
+      "680dc4300ff530712485848bf5e70c99"
+    ],
+    "sha1": [
+      "37563b1a92cddaf96d0519a882a15200adc3daec"
+    ],
+    "disc_serials": [
+      "SLUS-01104"
+    ],
+    "sizes": [
+      315850080
+    ],
+    "filenames": [
+      "Need for Speed - Porsche Unleashed (USA).cue",
+      "Need for Speed - Porsche Unleashed (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      15
+    ],
+    "disc_fps": [
+      "a45f663d5f4c95e6f80915b542ca82ad6f2217e27dca51ff7ffd1176675fa1c6"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/need-for-speed-porsche-unleashed-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "need-for-speed-porsche-unleashed-*-windows-x64.zip",
+      "linux-x64": "need-for-speed-porsche-unleashed-*-linux-x64.zip",
+      "macos-arm64": "need-for-speed-porsche-unleashed-*-macos-arm64.zip",
+      "macos-x64": "need-for-speed-porsche-unleashed-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "need_for_speed_porsche_unleashed.exe",
+    "linux": "need_for_speed_porsche_unleashed",
+    "macos": "need_for_speed_porsche_unleashed"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/need-for-speed-porsche-unleashed-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
